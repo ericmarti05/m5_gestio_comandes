@@ -1,0 +1,79 @@
+@startuml gestio_de_comandes
+
+class clients {
+ - nom: str 
+ -  adreça: str
+ -  telefon: str
+ -  email: str
+
+
++ __init__(nom: str, adreça: str, 
+    telèfon: str, email: str)      
+ + fer_comanda() 
+ }
+class UsuariWeb{ 
+ - login: str                     
+ - password: str                   
+ - estat: str 
++ __init__(login: str, password:  
+    str, estat: str)               
+ + canviar_password(nova_password: 
+    str) 
+    }
+class CarroCompra {            
+
+ - línies_de_comanda: 
+ - factura: Factura               
+
+ + afegir_producte(producte:      
+    Producte, quantitat: int)     
+ + treure_producte(producte:      
+    Producte, quantitat: int)     
+ + calcular_total()       
+}
+
+
+class LíniaCompra {            
+
+ - producte: Producte              
+ - quantitat: int                  
+ - preu_unitari: float             
+
+ + calcular_subtotal()  
+ }
+
+
+
+class Producte {               
+
+ - codi: str                      
+ - nom: str                       
+ - proveïdor: str                 
+
+ + __init__(codi: str, nom: str, proveïdor: str)                
+}
+
+
+class Factura{           
+
+ - codi: str                      
+ - adreça_facturació: str         
+ - data_emissió: date             
+ - data_tancament: date           
+ - pagament: str                  
+
+ + __init__(codi: str, adreça: str, data_emissió: date, data_tancament: date, pagament: str)                           
+} 
+
+
+class ordreEnviaments {      
+
+ - codi: str                      
+ - data_comanda: date             
+ - data_enviament: date           
+ - destinació: str                
+ - import: float                  
+ - estat: str                     
+
+ + __init__(codi: str, data_comanda: data, data_enviament: data, destinació: str, import: float, estat: str)                    
+}   
