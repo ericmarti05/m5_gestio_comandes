@@ -1,0 +1,21 @@
+@startuml casos_us
+:Client: as Client
+:Empleat: as Empleat
+
+package Caixer{
+    (Identificador) as (id)
+    (Canviar_Pin)
+    (Treure_Diners)
+    (Consultar_Saldo)
+    (Consultar_ultims_moviments)
+    (Reposar_Diners)
+}
+
+
+Client --> (id)
+Empleat --> (Reposar_Diners)
+
+(id) ..>(Treure_Diners) : include
+(id) ..> (Consultar_Saldo) : include
+(id) ..> (Canvia_Pin) : include
+(id) ..> (Consultar_ultims_moviments) : include
