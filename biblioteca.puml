@@ -1,0 +1,71 @@
+@startuml biblioteca 
+
+class Client {
+    - id: int
+    - nom: str
+    - adreça: str
+    - telèfon: str
+    - correu_electrònic: str
+    + __init__(id: int, nom: str, adreça: str, telèfon: str, correu_electrònic: str)
+}
+
+class UsuariWeb {
+    - id: int
+    - inici_sessió: str
+    - contrasenya: str
+    - estat: str
+    + __init__(id: int, inici_sessió: str, contrasenya: str, estat: str)
+}
+
+class CarroCompra {
+    - id: int
+    - id_usuari: int
+    - data_creació: str
+    + __init__(id: int, id_usuari: int, data_creació: str)
+}
+
+class Producte {
+    - id: int
+    - codi: str
+    - nom: str
+    - proveïdor: str
+    + __init__(id: int, codi: str, nom: str, proveïdor: str)
+}
+
+class Factura {
+    - id: int
+    - id_usuari: int
+    - adreça_facturació: str
+    - data_emissió: str
+    - data_tancament: str
+    - pagament: str
+    + __init__(id: int, id_usuari: int, adreça_facturació: str, data_emissió: str, data_tancament: str, pagament: str)
+}
+class Comanda {
+    - id: int
+    - id_element_linia: int
+    - data_creació: str
+    - data_enviament: str
+    - destinació: str
+    - import_: float
+    - estat: str
+    + __init__(id: int, id_element_linia: int, data_creació: str, data_enviament: str, destinació: str, import_: float, estat: str)
+}
+class ElementLinia {
+    - id: int
+    - id_producte: int
+    - quantitat: int
+    - preu: float
+    + __init__(id: int, id_producte: int, quantitat: int, preu: float)
+}
+
+
+
+Client -- UsuariWeb
+Client -- CarroCompra
+CarroCompra -- ElementLinia
+ElementLinia -- Producte
+Factura -- CarroCompra
+Comanda -- ElementLinia
+
+@enduml
