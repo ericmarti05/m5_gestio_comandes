@@ -1,0 +1,34 @@
+@startuml diagrama_de_classes
+class llibres{
+    - titol: str 
+    - any: str
+    - categoria: str
+    - autor: str
+    - editorial: str
++ __init__(titol:str, any:str, categoria:str, autor:str, editorial:str)
+}
+class editorial{
+    - nom: str
+    - nacionalitat: str
++ __init__(nom:str, nacionalitat:str)
+}
+class categoria{
+    definicio: str
++ __init__(difinicio:str)
+}
+class autors{
+    - nom:str
+    - data_naixement: str
++ __init__(nom:str, data_naixement:str)
+}
+class copies {
+    - codi_copia: str
+    - ubicacio: str
++ __init__(codi_copia:str, ubicacio:str)
+}
+class prestects {
+    - data_inici: str
+    - data_final: str
+    - llibre: str
+    - lector_implicat: str
+}
