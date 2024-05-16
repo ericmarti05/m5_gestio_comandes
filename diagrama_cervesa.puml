@@ -1,0 +1,15 @@
+@startuml diagrama_cervesa
+Sistema -> Sistema: Genera nova fitxa de client 
+Sistema -> Empleat: Solicita introduir nom 
+Empleat --> client: Preguntar nom al client
+Empleat <-- client: Li respon
+Empleat--> Sistema: Introdueix el nom donat 
+Sistema -> Empleat: Preguntar  un cognom
+Empleat --> client: Li pregunta el cognom
+Empleat <-- client: Li dicta el cognom 
+Empleat --> Sistema: Introdueix el cognom
+Sistema -> Empleat: Li diu que te d'introduir el DNI
+Empleat -->client: Li pregunta el DNI
+Empleat <-- client: Li diu el DNI
+Empleat --> Sistema: Introdueix el DNI
+Sistema -> Sistema: Guarda el registre del nou client
