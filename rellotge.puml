@@ -1,0 +1,23 @@
+@startuml rellotge
+
+hide empty description
+[*] --> Estat_Mostra_Hora_Minuts
+Estat_Mostra_Hora_Minuts : Mostra la hora i els minuts
+Estat_Mostra_Hora_Minuts --> AjustarRellotge : A
+state AjustarRellotge {
+Estat_Ajustar_Hora : La hora fa pampallugues
+Estat_Ajustar_Hora --> Estat_Canviar_Hora : B
+Estat_Canviar_Hora : Canvia l'hora
+Estat_Canviar_Hora --> Estat_Canviar_Hora : B
+Estat_Ajustar_Hora --> Estat_Ajustar_Minuts : A
+Estat_Ajustar_Minuts : Els minuts fa pampallugues
+Estat_Canviar_Hora --> Estat_Ajustar_Minuts : A
+Estat_Ajustar_Minuts --> Estat_Canviar_Minuts : B
+Estat_Canviar_Minuts --> Estat_Canviar_Minuts : B
+Estat_Canviar_Minuts : Canvia minuts
+}
+Estat_Canviar_Minuts --> [*] : A
+Estat_Ajustar_Minuts --> [*] : A
+
+
+
